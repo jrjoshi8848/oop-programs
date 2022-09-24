@@ -25,6 +25,7 @@ Swapping is the process of changing the position of two nodes with each others p
 <li>Locate the previous nodes of the nodes to be swapped .
 
 **Code:**
+```
 while (node1->value != val1)
     {
         pre1 = node1;
@@ -35,7 +36,7 @@ while (node1->value != val1)
         pre2 = node2;
         node2 = node2->next;
     }
-    
+```
  </li>
 <li>Replacing next of previous node of each other </li>
 <li>Replacing next of each other </li>
