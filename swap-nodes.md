@@ -7,7 +7,9 @@
     Node is an object which contains the data for that node and location to the next node.
   ### NEXT   
    It is pointer in the node pointing to address of next node.
- ### Head
+  #### Previous
+   It is pointer int the node pointing to the address of previous node.
+  ### Head
   It is pointer pointing to first node in linked list.
 
 ## Swapping Nodes
@@ -37,9 +39,13 @@ while (node1->value != val1)
         node2 = node2->next;
     }
 ```
- </li>
-<li>Replacing next of previous node of each other </li>
-<li>Replacing next of each other.
+
+</li>
+<li>Replacing next of previous node of each other. </li>
+<li>Replacing next of each other.</li>
+<li>In case of doubly linked list, we also replace the previous of the nodes to be swpped.
+
+#### For single linked list
 
 **code**
 ```
@@ -49,7 +55,23 @@ while (node1->value != val1)
         node1->next = node2->next;
         node2->next = ptr;
 ```
+
+#### For dubly linked list
+
+**code**
+```
+ node1->previous->next = node2;
+            node2->previous->next = node1;
+            node1->next->previous = node2;
+            node2->next->previous = node1;
+            ptr = node1->previous;
+            node1->previous = node2->previous;
+            node2->previous = ptr;
+            ptr = node1->next;
+            node1->next = node2->next;
+            node2->next = ptr;
+```
  </li>
 </ol>
 
-In this way the nodewill be swapped by interchanging their position.
+In this way the nodes will be swapped by interchanging their position.
